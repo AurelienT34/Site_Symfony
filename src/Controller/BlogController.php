@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
+use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,10 +13,20 @@ class BlogController extends AbstractController
 {
     /**
      * @Route("/blog", name="blog")
+     * @param ArticleRepository $repo
+     * @return Response
      */
-    public function index(): Response
+    public function index(ArticleRepository  $repo): Response
     {
-        return $this->render('Blog/blog.html.twig');
+        /**
+         * $article = $repo->find(12); // Article numéro 12
+         *  $article = $repo->findOneByTitle('Titre de l\'article');
+         *  $articles = $repo->findByTitle('Titre de l\'article');
+         */
+
+        $articles = $repo->findAll();
+        return $this->render('Blog/blog.html.twig',[
+            'articles'=>$articles]);
     }
 
     /**
@@ -34,10 +46,14 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/article", name="singleArticle")
+     * @Route("/blog/article/{id}", name="singleArticle")
+     * @param Article $article
+     * @return Response
      */
-    public function showSingleArticle(): Response
+    public function showSingleArticle(Article $article): Response
     {
-        return $this->render('blog/singleArticle.html.twig');
+        return $this->render('blog/singleArticle.html.twig',[
+            'article'=>$article
+        ]);
     }
 }
