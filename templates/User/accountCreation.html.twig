@@ -1,0 +1,57 @@
+{%  extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-3">Formulaire d'adhésion</h1>
+        <form>
+            <fieldset>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Prénom</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mon prénom">
+                    <small id="emailHelp" class="form-text text-muted">Cette information ne sera pas visible par les autres utilisateurs</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nom</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mon nom">
+                    <small id="emailHelp" class="form-text text-muted">Cette information ne sera pas visible par les autres utilisateurs</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Pseudonyme</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mon pseudonyme">
+                    <small id="emailHelp" class="form-text text-muted">Cette information sera visible par les autres utilisateurs</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Adresse email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mon email">
+                    <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre e-mail avec qui que ce soit..</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mot de passe</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mon mot de passe">
+                </div>
+                <fieldset class="form-group">
+                    <legend>Je suis ...</legend>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                            Un homme
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Une femme
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+                            Autre
+                        </label>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock body %}

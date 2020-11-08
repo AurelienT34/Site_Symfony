@@ -1,0 +1,31 @@
+{%  extends 'base.html.twig' %}
+
+{% block body %}
+    <article>
+        <h2>Titre de l'article</h2>
+        <div class="metaData"> Ecrit le 08/11/2020 à 18:18 dans la catégorie Animaux</div>
+        <div class="content">
+            <img src="http://placehold.it/350x150" alt="">
+            <p>je sais pas comment tu fonctionnes</p>
+            <a href="{{ path("singleArticle") }}" class="btn btn-primary">Lire la suite</a>
+        </div>
+    </article>
+    <article>
+        <h2>Titre de l'article</h2>
+        <div class="metaData"> Ecrit le 08/11/2020 à 18:18 dans la catégorie Animaux</div>
+        <div class="content">
+            <img src="http://placehold.it/350x150" alt="">
+            <p>je sais pas comment tu fonctionnes</p>
+        </div>
+        <a href="{{ path("singleArticle") }}" class="btn btn-primary">Lire la suite</a>
+    </article>
+    <article>
+        <h2>Titre de l'article</h2>
+        <div class="metaData"> Ecrit le 08/11/2020 à 18:18 dans la catégorie Animaux</div>
+        <div class="content">
+            <img src="http://placehold.it/350x150" alt="">
+            <p>je sais pas comment tu fonctionnes</p>
+        </div>
+        <a href="{{ path("singleArticle") }}" class="btn btn-primary">Lire la suite</a>
+    </article>
+{% endblock body %}
