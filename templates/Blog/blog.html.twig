@@ -1,31 +1,18 @@
 {%  extends 'base.html.twig' %}
 
 {% block body %}
-    <article>
-        <h2>Titre de l'article</h2>
-        <div class="metaData"> Ecrit le 08/11/2020 à 18:18 dans la catégorie Animaux</div>
-        <div class="content">
-            <img src="http://placehold.it/350x150" alt="">
-            <p>je sais pas comment tu fonctionnes</p>
-            <a href="{{ path("singleArticle") }}" class="btn btn-primary">Lire la suite</a>
-        </div>
-    </article>
-    <article>
-        <h2>Titre de l'article</h2>
-        <div class="metaData"> Ecrit le 08/11/2020 à 18:18 dans la catégorie Animaux</div>
-        <div class="content">
-            <img src="http://placehold.it/350x150" alt="">
-            <p>je sais pas comment tu fonctionnes</p>
-        </div>
-        <a href="{{ path("singleArticle") }}" class="btn btn-primary">Lire la suite</a>
-    </article>
-    <article>
-        <h2>Titre de l'article</h2>
-        <div class="metaData"> Ecrit le 08/11/2020 à 18:18 dans la catégorie Animaux</div>
-        <div class="content">
-            <img src="http://placehold.it/350x150" alt="">
-            <p>je sais pas comment tu fonctionnes</p>
-        </div>
-        <a href="{{ path("singleArticle") }}" class="btn btn-primary">Lire la suite</a>
-    </article>
+    <section class="articles"
+        {% for article in articles %}
+            <article>
+                <h2>{{ article.title }}</h2>
+                <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la catégorie Animaux</div>
+                <div class="content">
+                    <img src="{{ article.image }}" alt="">
+                    {{ article.content | slice(0, 100) | raw }}...
+                    <br>
+                    <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
 {% endblock body %}

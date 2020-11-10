@@ -1,6 +1,36 @@
 {%  extends 'base.html.twig' %}
 
 {% block body %}
-    <hr>
-    contenue de l'article
+    <div class="jumbotron">
+        <article>
+            <h2>{{ article.title }}</h2>
+            <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la catégorie {{ article.category.title }}</div>
+            <div class="content">
+                <img src="{{ article.image }}" alt="">
+                {{ article.content | raw }}
+                <hr>
+                {{ article.content | raw }}
+            </div>
+            <br>
+            <a href="{{ path("modificationArticle", {'id': article.id}) }}" class="btn btn-primary">Modifier</a>
+        </article>
+    </div>
+        <section id="commentaires" style="padding-top: 3%">
+            <h1>Commentaires</h1>
+            <br>
+            <ul class="list-group list-group-flush">
+            {% for comment in article.comments %}
+                <li class="list-group-item">
+                <div class="comment">
+                    <div class="row">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">{{ comment.content | raw }}</p>
+                            <footer class="blockquote-footer"> {{ comment.author }} <cite title="Date"> {{ comment.createdAt | date('d/m/Y à H:i') }} </cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </section>
 {% endblock body %}
