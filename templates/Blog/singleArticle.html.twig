@@ -11,12 +11,14 @@
                 <hr>
                 {{ article.content | raw }}
             </div>
-            <br>
-            <a href="{{ path("modificationArticle", {'id': article.id}) }}" class="btn btn-primary">Modifier</a>
+            {% if app.user %}
+                <br>
+                <a href="{{ path("modificationArticle", {'id': article.id}) }}" class="btn btn-primary">Modifier</a>
+            {% endif %}
         </article>
     </div>
         <section id="commentaires" style="padding-top: 3%">
-            <h1>Commentaires</h1>
+            <h1> {{ article.comments | length}} commentaires</h1>
             <br>
             <ul class="list-group list-group-flush">
             {% for comment in article.comments %}
@@ -33,4 +35,20 @@
             {% endfor %}
             </ul>
         </section>
+        <section id="commentaireForumlaire" style="padding-top: 3%">
+            {% if app.user %}
+                {{ form_start(commentForm) }}
+                {{ form_row(commentForm.author, {'attr':{'placeholder':"Votre nom d'autheur"}}) }}
+                {{ form_row(commentForm.content,{'label':"Commentaire",'attr':{'placeholder':"Vote commentaire"}}) }}
+                <button type="submit" class="btn btn-primary">Poster</button>
+                {{ form_end(commentForm) }}
+
+            {% else %}
+                <div class="alert alert-dismissible alert-warning">
+                    <h4 class="alert-heading">Vous devez être connecté pour réagir à cet article</h4>
+                    <p class="mb-0"><a href="{{ path('security_login') }}" class="alert-link">Je me connecte</a>.</p>
+                </div>
+            {% endif %}
+        </section>
+
 {% endblock body %}
