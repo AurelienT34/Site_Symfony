@@ -45,7 +45,7 @@ class BlogController extends AbstractController
      */
     public function home(): Response
     {
-        return $this->render('blog/index.html.twig');
+        return $this->render('Blog/index.html.twig');
     }
 
     /**
@@ -69,7 +69,7 @@ class BlogController extends AbstractController
             $manager->getManager()->flush();
             return  $this->redirectToRoute('singleArticle',['id'=>$article->getId()]);
         }
-        return $this->render('blog/singleArticle.html.twig',[
+        return $this->render('Blog/singleArticle.html.twig',[
             'article'=>$article,
             'commentForm'=>$form->createView()
         ]);
@@ -118,7 +118,7 @@ class BlogController extends AbstractController
             return  $this->redirectToRoute('singleArticle',['id'=>$article->getId()]);
         }
 
-        return $this->render('blog/creationArticle.html.twig',[
+        return $this->render('Blog/creationArticle.html.twig',[
             'formArticle' => $form->createView(),
             'editMode'=> $article->getId() !== null]);
     }
