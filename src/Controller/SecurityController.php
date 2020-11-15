@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\UserName;
 use App\Form\RegistrationType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,7 +23,7 @@ class SecurityController extends AbstractController
      */
     public function registration(Request $request, ManagerRegistry  $manager, UserPasswordEncoderInterface $encoder): Response
     {
-        $user = new User();
+        $user = new UserName();
 
         $form = $this->createForm(RegistrationType::class,$user);
         $form->handleRequest($request);
@@ -52,11 +53,11 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @param User $user
+     * @param UserName $user
      * @return Response
      * @Route("/user/compte/{id}", name="security_compte")
      */
-    public function compte(User $user): Response
+    public function compte(UserName $user): Response
     {
         return $this->render("security/compte.html.twig",[
             'user'=>$user

@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     message="L'email que vous avez indiqué est déjà utilisé !"
  * )
  */
-class User implements UserInterface
+class UserName implements UserInterface
 {
     /**
      * @ORM\Id
