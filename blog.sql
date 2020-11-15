@@ -11,38 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de données : `blog`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `article`
---
-
-DROP TABLE IF EXISTS `article`;
-CREATE TABLE IF NOT EXISTS `article` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `create_at` datetime NOT NULL,
-  `category_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_23A0E6612469DE2` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `article`
---
-
 INSERT INTO `article` (`id`, `title`, `content`, `image`, `create_at`, `category_id`) VALUES
 (42, 'Officia consequuntur quo cum voluptates non quas autem.', '<p>Sint eos tenetur dolorem consequatur quisquam accusamus itaque. Dolore natus voluptatem eaque commodi. Occaecati quas voluptate ea dolores ipsum soluta. Excepturi ea velit nobis.</p><p>Cum deleniti suscipit ipsa natus eligendi repudiandae corrupti. Cupiditate ipsum autem excepturi quae. Numquam dolore ex sed non aspernatur eum. Ut aliquid eos placeat. Cupiditate ea architecto labore error sed.</p><p>Exercitationem culpa expedita minima. Enim velit aut vel omnis nobis. Ut et possimus doloremque dolores impedit. Ut excepturi illum ab nemo dolorem nemo nesciunt excepturi. In nesciunt dicta sequi sit sapiente non qui.</p><p>Sequi ipsa est officiis corrupti a quam dicta. Laborum rerum delectus praesentium et voluptatum unde. Et et eius est non sit voluptatem.</p><p>Aut molestiae qui architecto beatae. Voluptate necessitatibus enim dicta et qui atque delectus voluptas. Necessitatibus earum et sapiente est. Ducimus sint iusto et et sit sed commodi temporibus.</p>', 'https://lorempixel.com/640/480/?82172', '2020-06-08 08:02:33', 4),
 (43, 'Deserunt quia autem quia id beatae consectetur.', '<p>Quidem voluptatem qui sequi eaque vel dolorem. Voluptatem repudiandae nesciunt laudantium optio. Est at modi atque at.</p><p>Perspiciatis suscipit asperiores minus inventore adipisci. Aut odio sapiente unde maxime qui. Tenetur dolorem est consectetur quia. Molestiae omnis voluptate dolores quia est perspiciatis.</p><p>Est blanditiis accusantium ex dolores rem occaecati qui. Exercitationem iusto tenetur ea. Veniam rerum libero sint explicabo.</p><p>Rerum ducimus et atque dolor ratione porro voluptatum. Nesciunt illo culpa ut rerum cumque autem pariatur. Aperiam eos dolorem commodi deleniti id labore quaerat.</p><p>Cumque praesentium laboriosam pariatur. Porro magnam corporis similique totam tempore tenetur sint. Molestias nemo quaerat cum. Vero aspernatur aut assumenda unde perferendis dolor porro.</p>', 'https://lorempixel.com/640/480/?57372', '2020-06-10 19:00:20', 4),
