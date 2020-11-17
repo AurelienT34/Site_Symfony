@@ -11,6 +11,7 @@ use Doctrine\Persistence\ObjectManager;
 use Doctrine\Persistence\ManagerRegistry;
 use phpDocumentor\Reflection\Types\Null_;
 use PhpParser\Node\Expr\Cast\Object_;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -76,6 +77,7 @@ class BlogController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/blog/creationarticle"), name="creationArticle")
      * @Route("/blog/creationarticle/{id}/edit", name="modificationArticle")
      * @param Article|null $article
