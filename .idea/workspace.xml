@@ -20,6 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3d4cf51-e353-4f87-954a-341904212769" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +170,7 @@
       <workItem from="1605457147820" duration="7328000" />
       <workItem from="1605465029326" duration="1478000" />
       <workItem from="1605543710874" duration="547000" />
-      <workItem from="1605614398945" duration="7418000" />
+      <workItem from="1605614398945" duration="7615000" />
     </task>
     <servers />
   </component>
