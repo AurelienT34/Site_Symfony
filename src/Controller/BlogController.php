@@ -43,10 +43,16 @@ class BlogController extends AbstractController
 
     /**
      * @Route("/", name="home")
+     * @param ArticleRepository $repo
+     * @return Response
      */
-    public function home(): Response
+    public function home(ArticleRepository  $repo): Response
     {
-        return $this->render('Blog/index.html.twig');
+        $articles = $repo->findBy(array(),array('createAt'=>'DESC'),5,0);
+
+        return $this->render('Blog/index.html.twig', [
+            'articles'=>$articles
+        ]);
     }
 
     /**
@@ -74,6 +80,19 @@ class BlogController extends AbstractController
             'article'=>$article,
             'commentForm'=>$form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/blog/article/remove/{id}", name="removeSingleArticle")
+     * @param Article $article
+     * @param ManagerRegistry $manager
+     * @return Response
+     */
+    public function removeSingleArticle(Article $article, ManagerRegistry $manager): Response
+    {
+        $manager->getManager()->remove($article);
+        $manager->getManager()->flush();
+        return $this->redirectToRoute('home');
     }
 
     /**

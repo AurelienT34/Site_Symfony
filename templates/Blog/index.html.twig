@@ -1,6 +1,35 @@
 {%  extends 'base.html.twig' %}
 
+
 {%  block body %}
-<h1>Derniers articles</h1>
+<h1>Bienvenue sur notre blog</h1>
+    <p style="padding-top: 3%">
+        Le terme blog est issu de l'aphérèse d'un mot composé, né de la contraction de Web log ; en anglais, log peut signifier registre ou journal.
+        Ce terme est employé pour la première fois par Jorn Barger, en 19979.
     <br>
+        Un blogueur ou une blogueuse10 (en anglais : blogger) est l'individu qui a l'habitude de bloguer11 : il écrit et publie les billets, sans entrer dans la composition de tous les commentaires qui y sont associés.
+        La blogosphère est l'ensemble des blogs ou la communauté des blogueurs12.
+        Parfois, par métonymie, on désigne l'ensemble des blogs d'une communauté précise : la « blogosphère homosexuelle », la « blogosphère des standards Web », etc.
+    </p>
+
+    <h2 style="padding-top: 3%">Voici les 5 derniers artciles postés</h2>
+    <section class="articles">
+        <ul class="list-group list-group-flush">
+            {% for article in articles %}
+                <li class="list-group-item">
+                    <article>
+                        <h2>{{ article.title }}</h2>
+                        <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la {{ article.category.title }}</div>
+                        <div class="content">
+                            <img src="{{ article.image }}" alt="" style="width: 50%">
+                            <div>
+                                {{ article.content | slice(0, 100) | raw }}...
+                            </div>
+                            <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
+                        </div>
+                    </article>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock body %}
