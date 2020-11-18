@@ -38,7 +38,7 @@ class Redirect404ToHomepageListener
         $response->setContent($message);
 
         if($exception->getCode() == 0) {
-            //$response = new RedirectResponse($this->router->generate('home'));
+            $response = new RedirectResponse($this->router->generate('home'));
         } else {
             // HttpExceptionInterface is a special type of exception that
             // holds status code and header details
