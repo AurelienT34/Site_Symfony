@@ -6,6 +6,7 @@ use App\Entity\Article;
 use App\Entity\Comment;
 use App\Form\ArticleType;
 use App\Form\CommentType;
+use App\Form\SearchArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -19,10 +20,11 @@ class BlogController extends AbstractController
 {
     /**
      * @Route("/blog", name="blog")
-     * @param ArticleRepository $repo
+     * @param ArticleRepository $articleRepository
+     * @param Request $request
      * @return Response
      */
-    public function index(ArticleRepository  $repo): Response
+    public function index(ArticleRepository  $articleRepository, Request $request): Response
     {
         /**
          * $article = $repo->find(12); // Article numéro 12
@@ -30,19 +32,34 @@ class BlogController extends AbstractController
          *  $articles = $repo->findByTitle('Titre de l\'article');
          */
 
-        $articles = $repo->findAll();
+        $articles = $articleRepository->findAll();
+
+        $form = $this->createForm(SearchArticleType::class);
+
+        $search = $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            // Recherche d'article avec les mots-clés
+            $articles = $articleRepository->search($search->get('mots')->getData(),
+            $search->get('categorie')->getData());
+        }
+
+
         return $this->render('Blog/blog.html.twig',[
-            'articles'=>$articles]);
+            'articles'=>$articles,
+            'formSearch'=>$form->createView()
+        ]);
     }
 
     /**
      * @Route("/", name="home")
-     * @param ArticleRepository $repo
+     * @param ArticleRepository $articleRepository
+     * @param Request $request
      * @return Response
      */
-    public function home(ArticleRepository  $repo): Response
+    public function home(ArticleRepository  $articleRepository): Response
     {
-        $articles = $repo->findBy(array(),array('createAt'=>'DESC'),5,0);
+        $articles = $articleRepository->findBy(array(),array('createAt'=>'DESC'),5,0);
 
         return $this->render('Blog/index.html.twig', [
             'articles'=>$articles
@@ -92,8 +109,8 @@ class BlogController extends AbstractController
 
     /**
      * @IsGranted("ROLE_EDITOR")
-     * @Route("/blog/creationarticle"), name="creationArticle")
-     * @Route("/blog/creationarticle/{id}/edit", name="modificationArticle")
+     * @Route("/blog/creationarticle"), name="creation_article")
+     * @Route("/blog/creationarticle/{id}/edit", name="modification_article")
      * @param Article|null $article
      * @param Request $request
      * @param ManagerRegistry $manager

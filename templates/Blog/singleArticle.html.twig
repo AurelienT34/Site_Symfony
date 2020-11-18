@@ -13,7 +13,7 @@
             </div>
             {% if is_granted('ROLE_EDITOR') %}
                 <br>
-                <a href="{{ path("modificationArticle", {'id': article.id}) }}" class="btn btn-primary">Modifier</a>
+                <a href="{{ path("modification_article", {'id': article.id}) }}" class="btn btn-primary">Modifier</a>
                 <a href="{{ path("removeSingleArticle", {'id': article.id}) }}" class="btn btn-primary">Supprimer</a>
 
             {% endif %}

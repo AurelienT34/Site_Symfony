@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ApiResource
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @ORM\Table(name="article", indexes={@ORM\Index(columns={"title", "content"}, flags={"fulltext"})})
  */
 class Article
 {

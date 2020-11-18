@@ -19,6 +19,21 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
+    public function search($mots = null, $categorie = null) {
+        $query = $this->createQueryBuilder('a');
+
+        if($mots != null) {
+            $query->where('MATCH_AGAINST(a.title,a.content) AGAINST (:mots boolean)>0')
+                ->setParameter('mots','*'.$mots.'*');
+        }
+        if($categorie != null) {
+            $query->leftJoin('a.category', 'c');
+            $query->andWhere('c.id = :id')
+                ->setParameter('id', $categorie);
+        }
+        return $query->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */
