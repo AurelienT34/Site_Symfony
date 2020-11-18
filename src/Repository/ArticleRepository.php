@@ -24,7 +24,7 @@ class ArticleRepository extends ServiceEntityRepository
 
         if($mots != null) {
             $query->where('MATCH_AGAINST(a.title,a.content) AGAINST (:mots boolean)>0')
-                ->setParameter('mots',$mots);
+                ->setParameter('mots','*'.$mots.'*');
         }
         if($categorie != null) {
             $query->leftJoin('a.category', 'c');
