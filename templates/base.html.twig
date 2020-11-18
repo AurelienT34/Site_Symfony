@@ -31,9 +31,10 @@
                 {% else %}
                     {% if is_granted('ROLE_EDITOR') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/blog/creationarticle">Création Article</a>
+                            <a class="nav-link" href="/blog/creationArticle">Création Article</a>
                         </li>
-                    {% elseif is_granted('ROLE_ADMIN') %}
+                    {% endif %}
+                    {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('admin_utilisateurs') }}">Utilisateurs</a>
                         </li>
@@ -42,6 +43,7 @@
                     <a class="nav-link" href="{{ path('security_logout') }}">Deconnexion</a>
                 </li>
                 {% endif %}
+
                 <li>
                     <a class="nav-link" href="/api">API
                         <span class="sr-only">(current)</span>
