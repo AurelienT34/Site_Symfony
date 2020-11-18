@@ -19,14 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3d4cf51-e353-4f87-954a-341904212769" name="Default Changelist" comment="">
+    <list default="true" id="a3d4cf51-e353-4f87-954a-341904212769" name="Default Changelist" comment="Rôles">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201117171401.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201117172523.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/EditUserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/compte.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/edituser.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LuckyController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserEntity.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserName.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserName.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/AccessDeniedHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/AccessDeniedHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Blog/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/blog.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lucky/number.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/compte.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,17 +163,26 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kCFY5byrRqQ9qGOQjtdfoqQMb0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Public\Blog\website-skeleton\templates\admin" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -174,7 +196,8 @@
       <workItem from="1605457147820" duration="7328000" />
       <workItem from="1605465029326" duration="1478000" />
       <workItem from="1605543710874" duration="547000" />
-      <workItem from="1605614398945" duration="14389000" />
+      <workItem from="1605614398945" duration="26741000" />
+      <workItem from="1605682926060" duration="2236000" />
     </task>
     <servers />
   </component>
@@ -193,18 +216,35 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Rôles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rôles" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1605620976270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1605620976270" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605621102411">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605646696046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605621102411" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605646696046" />
     <state x="531" y="135" key="NewPhpClassDialog" timestamp="1605620241878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="531" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1605620241878" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605683967110">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605683967110" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1605683586272">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605683586272" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605644166661">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605644166661" />
   </component>
 </project>

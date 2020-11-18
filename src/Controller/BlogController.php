@@ -7,15 +7,9 @@ use App\Entity\Comment;
 use App\Form\ArticleType;
 use App\Form\CommentType;
 use App\Repository\ArticleRepository;
-use Doctrine\Persistence\ObjectManager;
 use Doctrine\Persistence\ManagerRegistry;
-use phpDocumentor\Reflection\Types\Null_;
-use PhpParser\Node\Expr\Cast\Object_;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -83,6 +77,7 @@ class BlogController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/blog/article/remove/{id}", name="removeSingleArticle")
      * @param Article $article
      * @param ManagerRegistry $manager
@@ -96,7 +91,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/blog/creationarticle"), name="creationArticle")
      * @Route("/blog/creationarticle/{id}/edit", name="modificationArticle")
      * @param Article|null $article

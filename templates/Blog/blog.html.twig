@@ -7,16 +7,18 @@
                 <li class="list-group-item">
                     <article>
                         <h2>{{ article.title }}</h2>
-                        <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la {{ article.category.title }}</div>
+                        <div class="metaData">
+                            Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la {{ article.category.title }}
+                        </div>
                         <div class="content">
+                            <div>
                                 <img src="{{ article.image }}" alt="" style="width: 50%">
                                 {{ article.content | slice(0, 100) | raw }}...
-                            <div class="buttonManage">
+                            </div>
                                 <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
-                                {% if app.user %}
+                                {% if is_granted("ROLE_EDITOR") %}
                                     <a href="{{ path("modificationArticle", {'id': article.id}) }}" class="btn btn-primary">Modifier</a>
                                 {% endif %}
-                            </div>
                         </div>
                     </article>
                 </li>

@@ -12,7 +12,7 @@
         Parfois, par métonymie, on désigne l'ensemble des blogs d'une communauté précise : la « blogosphère homosexuelle », la « blogosphère des standards Web », etc.
     </p>
 
-    <h2 style="padding-top: 3%">Voici les 5 derniers artciles postés</h2>
+    <h2 style="padding-top: 3%">Voici les 5 derniers articles postés</h2>
     <section class="articles">
         <ul class="list-group list-group-flush">
             {% for article in articles %}
@@ -25,7 +25,9 @@
                             <div>
                                 {{ article.content | slice(0, 100) | raw }}...
                             </div>
-                            <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
+                            <div>
+                                <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
+                            </div>
                         </div>
                     </article>
                 </li>

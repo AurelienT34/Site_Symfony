@@ -46,6 +46,19 @@ class UserName implements UserInterface
      */
     private $confirm_password;
 
+    /**
+     * @ORM\Column(type="json")
+     *
+     */
+    private $roles = ["ROLE_USER"];
+
+
+    public function setRoles($roles): void
+    {
+        $this->roles = $roles;
+    }
+
+
     public function getConfirmPassWord(): ?string
     {
         return $this->confirm_password;
@@ -101,7 +114,7 @@ class UserName implements UserInterface
 
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        return $this->roles;
     }
 
     public function getSalt()
