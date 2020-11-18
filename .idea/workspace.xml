@@ -20,18 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3d4cf51-e353-4f87-954a-341904212769" name="Default Changelist" comment="Rôles">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201118150848.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Extensions/Doctrine/MatchAgainst.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/SearchArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Blog/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/blog.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +183,7 @@
       <workItem from="1605543710874" duration="547000" />
       <workItem from="1605614398945" duration="26741000" />
       <workItem from="1605682926060" duration="3681000" />
-      <workItem from="1605696006334" duration="18312000" />
+      <workItem from="1605696006334" duration="18592000" />
     </task>
     <servers />
   </component>
