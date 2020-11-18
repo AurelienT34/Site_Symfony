@@ -13,11 +13,13 @@
                         <article>
                             <h2>{{ article.title }}</h2>
                             <div class="metaData">
-                                Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la {{ article.category.title }}
+                                Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la categorie: {{ article.category.title }}
                             </div>
                             <div class="content">
                                 <div>
                                     <img src="{{ article.image }}" alt="" style="width: 50%">
+                                </div>
+                                <div>
                                     {{ article.content | slice(0, 100) | raw }}...
                                 </div>
                                     <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
