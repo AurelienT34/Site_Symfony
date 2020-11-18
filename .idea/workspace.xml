@@ -20,26 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3d4cf51-e353-4f87-954a-341904212769" name="Default Changelist" comment="Rôles">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201117171401.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201117172523.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EditUserType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/compte.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/edituser.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ApiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/api/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/website-skeleton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/website-skeleton.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LuckyController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserEntity.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserName.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserName.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/AccessDeniedHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/AccessDeniedHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Blog/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/blog.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lucky/number.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/compte.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +152,10 @@
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
+      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kCFY5byrRqQ9qGOQjtdfoqQMb0" />
@@ -197,7 +193,8 @@
       <workItem from="1605465029326" duration="1478000" />
       <workItem from="1605543710874" duration="547000" />
       <workItem from="1605614398945" duration="26741000" />
-      <workItem from="1605682926060" duration="2236000" />
+      <workItem from="1605682926060" duration="3681000" />
+      <workItem from="1605696006334" duration="5000000" />
     </task>
     <servers />
   </component>
@@ -238,13 +235,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605683967110" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605704603455">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605704603455" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1605683586272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605683586272" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605644166661">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605703932070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605644166661" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605703932070" />
   </component>
 </project>
