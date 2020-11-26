@@ -18,6 +18,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends AbstractController
 {
+
+    /**
+     * @Route("/", name="home")
+     * @param ArticleRepository $articleRepository
+     * @return Response
+     */
+    public function home(ArticleRepository  $articleRepository): Response
+    {
+        $articles = $articleRepository->findBy(array(),array('createAt'=>'DESC'),5,0);
+
+        return $this->render('Blog/index.html.twig', [
+            'articles'=>$articles
+        ]);
+    }
+
     /**
      * @Route("/blog", name="blog")
      * @param ArticleRepository $articleRepository
@@ -48,21 +63,6 @@ class BlogController extends AbstractController
         return $this->render('Blog/blog.html.twig',[
             'articles'=>$articles,
             'formSearch'=>$form->createView()
-        ]);
-    }
-
-    /**
-     * @Route("/", name="home")
-     * @param ArticleRepository $articleRepository
-     * @param Request $request
-     * @return Response
-     */
-    public function home(ArticleRepository  $articleRepository): Response
-    {
-        $articles = $articleRepository->findBy(array(),array('createAt'=>'DESC'),5,0);
-
-        return $this->render('Blog/index.html.twig', [
-            'articles'=>$articles
         ]);
     }
 

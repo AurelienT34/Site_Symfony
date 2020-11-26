@@ -38,7 +38,7 @@ class AdminController extends AbstractController
      * @param ManagerRegistry $manager
      * @return Response
      */
-    public function editUser(UserName $user, Request $request,ManagerRegistry  $manager): Response
+    public function editUser(UserName $user, Request $request, ManagerRegistry  $manager): Response
     {
         $form = $this->createForm(EditUserType::class,$user);
         $form->handleRequest($request);

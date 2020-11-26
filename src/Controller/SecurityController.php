@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\UserName;
+use App\Form\EditProfileType;
 use App\Form\RegistrationType;
 use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -41,6 +42,31 @@ class SecurityController extends AbstractController
 
         return $this->render('security/registration.html.twig', [
             'form'=>$form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/profile", name="profile")
+     * @param Request $request
+     * @param ManagerRegistry $manager
+     * @return Response
+     */
+    public function profile(Request $request, ManagerRegistry  $manager): Response
+    {
+        $user = $this->getUser();
+        $form = $this->createForm(EditProfileType::class,$user);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $manager->getManager()->persist($user);
+            $manager->getManager()->flush();
+
+            $this->addFlash('message','Modification effectué');
+            return $this->redirectToRoute('profile');
+        }
+
+        return $this->render('security/profile.html.twig',[
+            'profileForm'=>$form->createView()
         ]);
     }
 
