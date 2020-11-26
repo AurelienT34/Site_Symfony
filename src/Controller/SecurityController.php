@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class SecurityController extends AbstractController
@@ -20,7 +21,7 @@ class SecurityController extends AbstractController
      * @Route("/inscription", name="security_registration")
      * @param Request $request
      * @param ManagerRegistry $manager
-     * @param UserPasswordEncoder $encoder
+     * @param UserPasswordEncoderInterface $encoder
      * @return Response
      */
     public function registration(Request $request, ManagerRegistry  $manager, UserPasswordEncoderInterface $encoder): Response
@@ -49,19 +50,22 @@ class SecurityController extends AbstractController
      * @Route("/profile", name="profile")
      * @param Request $request
      * @param ManagerRegistry $manager
+     * @param UserPasswordEncoderInterface $encoder
      * @return Response
      */
-    public function profile(Request $request, ManagerRegistry  $manager): Response
+    public function profile(Request $request, ManagerRegistry  $manager, UserPasswordEncoderInterface $encoder): Response
     {
         $user = $this->getUser();
         $form = $this->createForm(EditProfileType::class,$user);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
+            $hash = $encoder->encodePassword($user,$user->getPassword());
+            $user->setPassword($hash);
             $manager->getManager()->persist($user);
             $manager->getManager()->flush();
 
-            $this->addFlash('message','Modification effectué');
+            $this->addFlash('message','Profil mis à jour');
             return $this->redirectToRoute('profile');
         }
 

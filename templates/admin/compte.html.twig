@@ -3,6 +3,11 @@
 {% block title %}Gestion des comptes{% endblock %}
 
 {% block body %}
+    {%  for message in app.flashes('message') %}
+        <div class="alert alert-success" role="alert">
+            {{message}}
+        </div>
+    {% endfor %}
     <h1>Tous les utilisateurs</h1>
     <table class="table table-striped">
         <thead>
