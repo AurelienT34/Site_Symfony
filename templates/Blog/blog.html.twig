@@ -24,9 +24,9 @@
                                 <div>
                                     {{ article.content | slice(0, 100) | raw }}...
                                 </div>
-                                    <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
+                                    <a href="{{ path("singleArticle", {'slug': article.slug}) }}" class="btn btn-primary">Lire la suite</a>
                                     {% if is_granted("ROLE_EDITOR") %}
-                                        <a href="{{ path("modification_article", {'id': article.id}) }}" class="btn btn-primary">Modifier</a>
+                                        <a href="{{ path("modification_article", {'slug': article.slug}) }}" class="btn btn-primary">Modifier</a>
                                     {% endif %}
                             </div>
                         </article>

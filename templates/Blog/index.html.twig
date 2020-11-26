@@ -27,7 +27,7 @@
                                 {{ article.content | slice(0, 100) | raw }}...
                             </div>
                             <div>
-                                <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
+                                <a href="{{ path("singleArticle", {'slug': article.slug}) }}" class="btn btn-primary">Lire la suite</a>
                             </div>
                         </div>
                     </article>

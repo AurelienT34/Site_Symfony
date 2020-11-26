@@ -68,7 +68,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/article/{id}", name="singleArticle")
+     * @Route("/blog/article/{slug}", name="singleArticle")
      * @param Article $article
      * @param Request $request
      * @param ManagerRegistry $manager
@@ -86,7 +86,7 @@ class BlogController extends AbstractController
 
             $manager->getManager()->persist($comment);
             $manager->getManager()->flush();
-            return  $this->redirectToRoute('singleArticle',['id'=>$article->getId()]);
+            return  $this->redirectToRoute('singleArticle',['id'=>$article->getSlug()]);
         }
         return $this->render('Blog/singleArticle.html.twig',[
             'article'=>$article,
@@ -96,7 +96,7 @@ class BlogController extends AbstractController
 
     /**
      * @IsGranted("ROLE_EDITOR")
-     * @Route("/blog/article/remove/{id}", name="removeSingleArticle")
+     * @Route("/blog/article/remove/{slug}", name="removeSingleArticle")
      * @param Article $article
      * @param ManagerRegistry $manager
      * @return Response
@@ -111,7 +111,7 @@ class BlogController extends AbstractController
     /**
      * @IsGranted("ROLE_EDITOR")
      * @Route("/blog/creationarticle"), name="creation_article")
-     * @Route("/blog/creationarticle/{id}/edit", name="modification_article")
+     * @Route("/blog/creationarticle/{slug}/edit", name="modification_article")
      * @param Article|null $article
      * @param Request $request
      * @param ManagerRegistry $manager
@@ -149,7 +149,7 @@ class BlogController extends AbstractController
 
             $manager->getManager()->persist($article);
             $manager->getManager()->flush();
-            return  $this->redirectToRoute('singleArticle',['id'=>$article->getId()]);
+            return  $this->redirectToRoute('singleArticle',['slug'=>$article->getSlug()]);
         }
 
         return $this->render('Blog/creationArticle.html.twig',[
