@@ -20,11 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3d4cf51-e353-4f87-954a-341904212769" name="Default Changelist" comment="Rôles">
+      <change afterPath="$PROJECT_DIR$/config/packages/stof_doctrine_extensions.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201126150835.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/website-skeleton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/website-skeleton.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EditProfileType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EditProfileType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/compte.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/compte.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/profile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +156,9 @@
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/vendor/api-platform/core" />
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kCFY5byrRqQ9qGOQjtdfoqQMb0" />
@@ -190,7 +200,7 @@
       <workItem from="1605696006334" duration="19662000" />
       <workItem from="1605728803611" duration="701000" />
       <workItem from="1605729854765" duration="2704000" />
-      <workItem from="1606393635058" duration="8630000" />
+      <workItem from="1606393635058" duration="14864000" />
     </task>
     <servers />
   </component>
@@ -235,10 +245,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605704603455" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1605712006285">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1606405392926">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605712006285" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606405392926" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605703932070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

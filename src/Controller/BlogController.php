@@ -8,6 +8,7 @@ use App\Form\ArticleType;
 use App\Form\CommentType;
 use App\Form\SearchArticleType;
 use App\Repository\ArticleRepository;
+use DateTime;
 use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
@@ -80,7 +81,7 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $comment->setCreatedAt(new \DateTime())
+            $comment->setCreatedAt(new DateTime())
                     ->setArticle($article);
 
             $manager->getManager()->persist($comment);
@@ -143,7 +144,7 @@ class BlogController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
 
             if(!$article->getId()) {
-                $article->setCreateAt(new \DateTime());
+                $article->setCreateAt(new DateTime());
             }
 
             $manager->getManager()->persist($article);
