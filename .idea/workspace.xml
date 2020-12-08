@@ -20,21 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3d4cf51-e353-4f87-954a-341904212769" name="Default Changelist" comment="Rôles">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201126174850.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201108200606.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201110141853.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201110142933.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201110163430.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201115170439.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201117171401.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201117172523.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201118150848.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201126150835.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/stof_doctrine_extensions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/stof_doctrine_extensions.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Blog/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/blog.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CommentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/singleArticle.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +196,8 @@
       <workItem from="1605696006334" duration="19662000" />
       <workItem from="1605728803611" duration="701000" />
       <workItem from="1605729854765" duration="2704000" />
-      <workItem from="1606393635058" duration="21326000" />
+      <workItem from="1606393635058" duration="21997000" />
+      <workItem from="1607453083132" duration="1574000" />
     </task>
     <servers />
   </component>

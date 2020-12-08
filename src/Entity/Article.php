@@ -42,6 +42,7 @@ class Article
     private $image;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     private $createAt;
@@ -117,13 +118,6 @@ class Article
     public function getCreateAt(): ?\DateTimeInterface
     {
         return $this->createAt;
-    }
-
-    public function setCreateAt(\DateTimeInterface $createAt): self
-    {
-        $this->createAt = $createAt;
-
-        return $this;
     }
 
     public function getCategory(): ?Category

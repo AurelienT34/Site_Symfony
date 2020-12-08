@@ -42,7 +42,6 @@
         <section id="commentaireForumlaire" style="padding-top: 3%">
             {% if app.user %}
                 {{ form_start(commentForm) }}
-                {{ form_row(commentForm.author, {'attr':{'placeholder':"Votre nom d'autheur"}}) }}
                 {{ form_row(commentForm.content,{'label':"Commentaire",'attr':{'placeholder':"Vote commentaire"}}) }}
                 <button type="submit" class="btn btn-primary">Poster</button>
                 {{ form_end(commentForm) }}

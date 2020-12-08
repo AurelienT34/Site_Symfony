@@ -81,12 +81,12 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $comment->setCreatedAt(new DateTime())
+            $comment->setAuthor($this->getUser()->getUsername())
                     ->setArticle($article);
 
             $manager->getManager()->persist($comment);
             $manager->getManager()->flush();
-            return  $this->redirectToRoute('singleArticle',['id'=>$article->getSlug()]);
+            return  $this->redirectToRoute('singleArticle',['slug'=>$article->getSlug()]);
         }
         return $this->render('Blog/singleArticle.html.twig',[
             'article'=>$article,
@@ -143,9 +143,11 @@ class BlogController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
 
+            /**
             if(!$article->getId()) {
                 $article->setCreateAt(new DateTime());
             }
+             */
 
             $manager->getManager()->persist($article);
             $manager->getManager()->flush();
