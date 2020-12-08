@@ -120,6 +120,26 @@ class Article
         return $this->createAt;
     }
 
+    public function setCreateAt(\DateTimeInterface $createAt): self
+    { // Pour fixtures
+        $this->createAt = $createAt;
+
+        return $this;
+    }
+
+    public function setCreateAtFromString(string $dateString)
+    {
+        //2020-11-18 00:00:00.000000
+        $dateStringStepOne = explode(" ",$dateString);
+        $dateStringFinal = explode("-",$dateStringStepOne[0]);
+        $date = new \DateTime();
+
+        $date->setDate(intval($dateStringFinal[0]),intval($dateStringFinal[1]),intval($dateStringFinal[2]));
+        $this->createAt = $date;
+
+        return $this;
+    }
+
     public function getCategory(): ?Category
     {
         return $this->category;
