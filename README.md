@@ -7,11 +7,11 @@ TROUCHE Aurélien
 – Commentaires:
   Controller --> OK
   CRUD --> OK
-  timestampable --> A FAIRE
+  timestampable --> OK
   sluggable --> OK
   API --> OK
-  API 5 DERNIER ARTICLES POST --> A FAIRE
-  API 5 DERNIERE ARTICLES GET --> A FAIRE
+  API 5 DERNIER ARTICLES POST --> OK
+  API 5 DERNIERE ARTICLES GET --> OK
   HERBERGEMENT --> OK
 
 – Appréciation sur le cours pour l’année suivante (facultatif).
