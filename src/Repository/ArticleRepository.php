@@ -23,6 +23,7 @@ class ArticleRepository extends ServiceEntityRepository
         $query = $this->createQueryBuilder('a');
 
         if($mots != null) {
+            //https://packagist.org/packages/vertigolabs/doctrine-full-text-postgres
             $query->where('MATCH_AGAINST(a.title,a.content) AGAINST (:mots boolean)>0')
                 ->setParameter('mots','*'.$mots.'*');
         }
