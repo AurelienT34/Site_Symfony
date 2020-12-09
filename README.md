@@ -38,3 +38,5 @@ Méthodes create et update d'article dans la même fonction du controller.
 Utilisation des forms de symfony,Gedmo,Entity,EvenListener.
 Sécurisation des routes avec le prefixe des routes.
 
+Pour créer un administrateur ou un editeur il faut d'abbord créer un compte normal puis avec un compte d'admin (aurelien@symfony.com), vous pouvez modifier les droits des utilisateurs.
+
