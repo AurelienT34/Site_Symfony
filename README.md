@@ -1,6 +1,7 @@
 # Symfony
 PORTAL Pierre
 TROUCHE Aurélien
+Site -> http://portal-trouche-blog.herokuapp.com/
 
 – Compte et accès (pour la partie administrateur):
 
@@ -25,6 +26,11 @@ Mot de passe: test3@symfony.com
   API 5 DERNIER ARTICLES POST --> OK
   API 5 DERNIERE ARTICLES GET --> OK
   HERBERGEMENT --> OK
+
+Fonctionnement:
+
+Seul les editeurs et les administrateur peuvent toucher aux articles (création et modification).
+Les utilisateurs peuvent consulter les articles et poster des commentaires.
 
 – Appréciation sur le cours pour l’année suivante (facultatif).
 
