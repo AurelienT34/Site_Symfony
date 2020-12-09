@@ -42,6 +42,7 @@ Gestion de l'unicité des email dans l'entité.
 Gestion de la correspondance du mot de passe et de confirmation mot de passe dans l'entité.
 Gestion de la taille des attributs dans l'entité.
 
+Les fixtures sont couplés avec la librérie Faker (https://github.com/fzaninotto/Faker) lors de nos tests en local.
 Si l'url rentrée  n'est pas bonne ou que l'utilisateur ne dispose pas des droits, alors il est redirigé vers la page d'acceuil.
 
 Pour créer un administrateur ou un editeur il faut d'abbord créer un compte normal puis avec un compte d'admin (aurelien@symfony.com), vous pouvez modifier les droits des utilisateurs.
