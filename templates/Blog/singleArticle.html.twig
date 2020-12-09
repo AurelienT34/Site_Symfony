@@ -1,19 +1,23 @@
 {%  extends 'base.html.twig' %}
 
+{% block title %}Article{% endblock %}
+
 {% block body %}
     <div class="jumbotron">
         <article>
             <h2>{{ article.title }}</h2>
             <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la catégorie {{ article.category.title }}</div>
             <div class="content">
-                <img src="{{ article.image }}" alt="">
+                <img src="{{ article.image }}" alt="" style="width: 50%">
+                <div style="padding-top: 3%">
                 {{ article.content | raw }}
-                <hr>
-                {{ article.content | raw }}
+                </div>
             </div>
-            {% if app.user %}
+            {% if is_granted('ROLE_EDITOR') %}
                 <br>
-                <a href="{{ path("modificationArticle", {'id': article.id}) }}" class="btn btn-primary">Modifier</a>
+                <a href="{{ path("modification_article", {'slug': article.slug}) }}" class="btn btn-primary">Modifier</a>
+                <a href="{{ path("removeSingleArticle", {'slug': article.slug}) }}" class="btn btn-primary">Supprimer</a>
+
             {% endif %}
         </article>
     </div>
@@ -23,14 +27,14 @@
             <ul class="list-group list-group-flush">
             {% for comment in article.comments %}
                 <li class="list-group-item">
-                <div class="comment">
-                    <div class="row">
-                        <blockquote class="blockquote">
-                            <p class="mb-0">{{ comment.content | raw }}</p>
-                            <footer class="blockquote-footer"> {{ comment.author }} <cite title="Date"> {{ comment.createdAt | date('d/m/Y à H:i') }} </cite></footer>
-                        </blockquote>
+                    <div class="comment">
+                        <div class="row">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">{{ comment.content | raw }}</p>
+                                <footer class="blockquote-footer"> {{ comment.author }} <cite title="Date"> {{ comment.createdAt | date('d/m/Y à H:i') }} </cite></footer>
+                            </blockquote>
+                        </div>
                     </div>
-                </div>
                 </li>
             {% endfor %}
             </ul>
@@ -38,7 +42,6 @@
         <section id="commentaireForumlaire" style="padding-top: 3%">
             {% if app.user %}
                 {{ form_start(commentForm) }}
-                {{ form_row(commentForm.author, {'attr':{'placeholder':"Votre nom d'autheur"}}) }}
                 {{ form_row(commentForm.content,{'label':"Commentaire",'attr':{'placeholder':"Vote commentaire"}}) }}
                 <button type="submit" class="btn btn-primary">Poster</button>
                 {{ form_end(commentForm) }}

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -31,6 +32,7 @@ class UserName implements UserInterface
     private $email;
 
     /**
+     * @Assert\Length(min="8", minMessage="Nom trop court")
      * @ORM\Column(type="string", length=255)
      */
     private $username;
@@ -45,6 +47,19 @@ class UserName implements UserInterface
      * @Assert\EqualTo(propertyPath="password", message="Mot de passe non identique")
      */
     private $confirm_password;
+
+    /**
+     * @ORM\Column(type="json")
+     *
+     */
+    private $roles = ["ROLE_USER"];
+
+
+    public function setRoles($roles): void
+    {
+        $this->roles = $roles;
+    }
+
 
     public function getConfirmPassWord(): ?string
     {
@@ -101,7 +116,7 @@ class UserName implements UserInterface
 
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        return $this->roles;
     }
 
     public function getSalt()

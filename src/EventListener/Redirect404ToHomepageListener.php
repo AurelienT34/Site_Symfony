@@ -27,7 +27,7 @@ class Redirect404ToHomepageListener
         // You get the exception object from the received event
         $exception = $event->getThrowable();
         $message = sprintf(
-            'Merci de rapporter l\'erreur ci dessous aux administrateur:\n
+            'Merci de rapporter l\'erreur aux administrateur:
             My Error says: %s with code: %s',
             $exception->getMessage(),
             $exception->getCode()

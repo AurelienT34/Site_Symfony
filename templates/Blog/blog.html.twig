@@ -1,18 +1,41 @@
 {%  extends 'base.html.twig' %}
 
+{% block title %}Blog{% endblock %}
+
 {% block body %}
-    <section class="articles"
-        {% for article in articles %}
-            <article>
-                <h2>{{ article.title }}</h2>
-                <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la {{ article.category.title }}</div>
-                <div class="content">
-                    <img src="{{ article.image }}" alt="">
-                    {{ article.content | slice(0, 100) | raw }}...
-                    <br>
-                    <a href="{{ path("singleArticle", {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
-                </div>
-            </article>
-        {% endfor %}
+    <div class="jumbotron">
+        <h1>Recherche d'article</h1>
+        {{ form(formSearch, {'attr':{'class':"form-inline my-2 my-lg-0"}}) }}
+    </div>
+    <section class="articles">
+        <ul class="list-group list-group-flush">
+            {% if articles|length != 0 %}
+                {% for article in articles %}
+                    <li class="list-group-item">
+                        <article>
+                            <h2>{{ article.title }}</h2>
+                            <div class="metaData">
+                                Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la catégorie: {{ article.category.title }}
+                            </div>
+                            <div class="content">
+                                <div>
+                                    <img src="{{ article.image }}" alt="" style="width: 50%">
+                                </div>
+                                <div>
+                                    {{ article.content | slice(0, 100) | raw }}...
+                                </div>
+                                    <a href="{{ path("singleArticle", {'slug': article.slug}) }}" class="btn btn-primary">Lire la suite</a>
+                                    {% if is_granted("ROLE_EDITOR") %}
+                                        <a href="{{ path("modification_article", {'slug': article.slug}) }}" class="btn btn-primary">Modifier</a>
+                                    {% endif %}
+                            </div>
+                        </article>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <p>Désolé, Nous ne possédons aucun article correspondant à votre recherche</p>
+                <a href="{{ path('blog') }}">Retour aux articles</a>
+            {% endif %}
+        </ul>
     </section>
 {% endblock body %}

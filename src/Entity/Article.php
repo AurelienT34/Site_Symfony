@@ -2,13 +2,17 @@
 
 namespace App\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ArticleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @ORM\Table(name="article", indexes={@ORM\Index(columns={"title", "content"}, flags={"fulltext"})})
  */
 class Article
 {
@@ -27,7 +31,7 @@ class Article
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\Length(min=10,minMessage="Contenu trop court")
+     * @Assert\Length(min=250,minMessage="Contenu trop court [250 caractères minimun]")
      */
     private $content;
 
@@ -38,6 +42,7 @@ class Article
     private $image;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     private $createAt;
@@ -47,6 +52,12 @@ class Article
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    /**
+     * @Gedmo\Slug(fields={"title","id"})
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", orphanRemoval=true)
@@ -61,6 +72,11 @@ class Article
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
     }
 
     public function getTitle(): ?string
@@ -105,8 +121,21 @@ class Article
     }
 
     public function setCreateAt(\DateTimeInterface $createAt): self
-    {
+    { // Pour fixtures
         $this->createAt = $createAt;
+
+        return $this;
+    }
+
+    public function setCreateAtFromString(string $dateString)
+    {
+        //2020-11-18 00:00:00.000000
+        $dateStringStepOne = explode(" ",$dateString);
+        $dateStringFinal = explode("-",$dateStringStepOne[0]);
+        $date = new \DateTime();
+
+        $date->setDate(intval($dateStringFinal[0]),intval($dateStringFinal[1]),intval($dateStringFinal[2]));
+        $this->createAt = $date;
 
         return $this;
     }

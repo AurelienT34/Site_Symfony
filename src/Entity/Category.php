@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
  */
 class Category
@@ -54,6 +56,11 @@ class Category
         $this->title = $title;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getTitle();
     }
 
     public function getDescription(): ?string

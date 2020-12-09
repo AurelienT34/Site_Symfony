@@ -1,6 +1,8 @@
 {%  extends 'base.html.twig' %}
 {% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
 
+{% block title %}Creation d'un Article{% endblock %}
+
 {% block body %}
     <div class="jumbotron">
         <h1 class="display-3">
@@ -16,7 +18,7 @@
         <small id="titre" class="form-text text-muted">Doit contenir entre 10 et 255 caractères</small>
         {{ form_row(formArticle.category) }}
         {{ form_row(formArticle.content, {'label':"Contenu de l'article",'attr':{'placeholder':"Contenu de l'article"}}) }}
-        <small id="emailHelp" class="form-text text-muted">Doit contenir au minimun 10 caractères</small>
+        <small id="emailHelp" class="form-text text-muted">Doit contenir au minimun 255 caractères</small>
         {{ form_row(formArticle.image, {'attr':{'placeholder':"URL de l'article"}}) }}
 
         <button type="submit" class="btn btn-primary">

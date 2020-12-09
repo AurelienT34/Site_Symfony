@@ -1,0 +1,26 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{%  block body %}
+    <h1>http://didier-martin-blog.herokuapp.com/api</h1>
+
+    <h2 style="padding-top: 3%">Voici les 5 derniers articles postés</h2>
+    <section class="articles">
+        <ul class="list-group list-group-flush">
+            {% for article in articles %}
+                <li class="list-group-item">
+                    <article>
+                        <h2>{{ article.title }}</h2>
+                        <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }}</div>
+                        <div class="content">
+                            <div>
+                                {{ article.content | raw }}
+                            </div>
+                        </div>
+                    </article>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock body %}
