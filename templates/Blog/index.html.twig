@@ -21,7 +21,7 @@
                 <li class="list-group-item">
                     <article>
                         <h2>{{ article.title }}</h2>
-                        <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la {{ article.category.title }}</div>
+                        <div class="metaData"> Ecrit le {{ article.createAt | date('d/m/Y') }} à {{ article.createAt | date('H:i') }} dans la catégorie: {{ article.category.title }}</div>
                         <div class="content">
                             <img src="{{ article.image }}" alt="" style="width: 50%">
                             <div>
