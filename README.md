@@ -28,6 +28,7 @@ Mot de passe: test3@symfony.com
   HERBERGEMENT --> OK
   Securité --> OK
   Roles --> OK
+  Bootstrap --> OK
 
 Fonctionnement:
 
