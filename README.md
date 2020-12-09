@@ -26,6 +26,8 @@ Mot de passe: test3@symfony.com
   API 5 DERNIER ARTICLES POST --> OK
   API 5 DERNIERE ARTICLES GET --> OK
   HERBERGEMENT --> OK
+  Securité --> OK
+  Roles --> OK
 
 Fonctionnement:
 
