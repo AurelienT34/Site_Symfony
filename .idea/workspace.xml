@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a3d4cf51-e353-4f87-954a-341904212769" name="Default Changelist" comment="Rôles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserName.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserName.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/Redirect404ToHomepageListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Blog/creationArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Blog/creationArticle.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +196,8 @@
       <workItem from="1605728803611" duration="701000" />
       <workItem from="1605729854765" duration="2704000" />
       <workItem from="1606393635058" duration="21997000" />
-      <workItem from="1607453083132" duration="16602000" />
+      <workItem from="1607453083132" duration="18089000" />
+      <workItem from="1607511877632" duration="18000" />
     </task>
     <servers />
   </component>

@@ -32,6 +32,7 @@ class UserName implements UserInterface
     private $email;
 
     /**
+     * @Assert\Length(min="8", minMessage="Nom trop court")
      * @ORM\Column(type="string", length=255)
      */
     private $username;

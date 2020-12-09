@@ -129,26 +129,11 @@ class BlogController extends AbstractController
                     ->setImage($article->getImage());
         }
 
-        /**
-        $form = $this->createFormBuilder($article)
-                        ->add('title')
-                        ->add('content')
-                        ->add('image')
-                        ->getForm();
-        */
-
         $form = $this->createForm(ArticleType::class,$article);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-
-            /**
-            if(!$article->getId()) {
-                $article->setCreateAt(new DateTime());
-            }
-             */
-
             $manager->getManager()->persist($article);
             $manager->getManager()->flush();
             return  $this->redirectToRoute('singleArticle',['slug'=>$article->getSlug()]);
