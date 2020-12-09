@@ -31,6 +31,8 @@ Fonctionnement:
 
 Seul les editeurs et les administrateur peuvent toucher aux articles (création et modification).
 Les utilisateurs peuvent consulter les articles et poster des commentaires.
-
-– Appréciation sur le cours pour l’année suivante (facultatif).
+Utilisateur d'un bundle pour l'api et génération d'un json "à la main" sur la page d'acceuil.
+Méthodes create et update d'article dans la même fonction du controller.
+Utilisation des forms de symfony,Gedmo,Entity,EvenListener.
+Sécurisation des routes avec le prefixe des routes.
 
