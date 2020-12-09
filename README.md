@@ -44,3 +44,5 @@ Gestion de la taille des attributs dans l'entité.
 
 Pour créer un administrateur ou un editeur il faut d'abbord créer un compte normal puis avec un compte d'admin (aurelien@symfony.com), vous pouvez modifier les droits des utilisateurs.
 
+La recherche fonction par catégorie mais pas avec le full text. Cependant la recherche full text fonction avec mySQL et non avec PostgreSQL.
+
