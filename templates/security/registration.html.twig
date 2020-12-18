@@ -7,6 +7,7 @@
         <h1 class="display-3">Formulaire d'inscription</h1>
         {{ form_start(form) }}
         {{ form_row(form.username, {'label':"Nom d'utilisateur",'attr':{'placeholder':"Nom d'utilisateur"}}) }}
+        <small id="username" class="form-text text-muted">Doit contenir minimun 4 caractères</small>
         {{ form_row(form.email, {'attr':{'placeholder':"Votre email"}}) }}
         {{ form_row(form.password, {'label':"Mot de passe",'attr':{'placeholder':"Votre mot de passe"}}) }}
         {{ form_row(form.confirm_password, {'label':"Confirmer votre mot de passe",'attr':{'placeholder':"Répétez votre mot de passe"}}) }}

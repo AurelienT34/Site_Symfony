@@ -3,6 +3,11 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
+
+    {% if error %}
+        <div class="alert alert-danger">Mauvais mail ou mot de passe</div>
+    {% endif %}
+
     <div class="jumbotron">
         <form action="{{ path('security_login') }}" method="post">
             <fieldset>
