@@ -4,7 +4,7 @@
 ###### TROUCHE Aurélien
 ###### http://portal-trouche-blog.herokuapp.com/
 
-# Compte et accès (pour la partie administrateur):
+# Compte et accès:
 
 ## Administrateur:
 ###### Email: aurelien@symfony.com
