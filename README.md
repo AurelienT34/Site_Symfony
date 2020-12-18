@@ -36,7 +36,7 @@ Seul les editeurs et les administrateur peuvent toucher aux articles (création 
 Les utilisateurs peuvent consulter les articles et poster des commentaires.
 Utilisation d'un bundle pour l'api et génération d'un json "à la main" sur la page d'acceuil.
 Méthodes create et update d'article dans la même fonction du controller.
-Utilisation des forms de symfony,Gedmo,Entity,EvenListener.
+Utilisation des forms de symfony,Gedmo,Entity,EvenListener,TsVector.
 Sécurisation des routes avec le prefixe des routes.
 Gestion de l'unicité des email dans l'entité.
 Gestion de la correspondance du mot de passe et de confirmation mot de passe dans l'entité.
@@ -45,7 +45,7 @@ Gestion de la taille des attributs dans l'entité.
 Les fixtures sont couplés avec la librérie Faker (https://github.com/fzaninotto/Faker) lors de nos tests en local.
 Si l'url rentrée  n'est pas bonne ou que l'utilisateur ne dispose pas des droits, alors il est redirigé vers la page d'acceuil.
 
-Pour créer un administrateur ou un editeur il faut d'abbord créer un compte normal puis avec un compte d'admin (aurelien@symfony.com), vous pouvez modifier les droits des utilisateurs.
+Pour créer un administrateur ou un editeur il faut d'abbord créer un compte normal puis avec un compte d'admin (aurelien@symfony.com), vous pouvez modifier les droits des utilisateurs dans l'onglet "Utilisateurs".
 
-La recherche fonctionne par catégorie mais pas avec le full text. Cependant la recherche full text fonction avec mySQL et non avec PostgreSQL.
+La recherche fonctionne par catégorie et avec le full text.
 
