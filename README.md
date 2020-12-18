@@ -4,21 +4,21 @@
 ###### TROUCHE Aurélien 21502994
 ###### http://portal-trouche-blog.herokuapp.com/
 
-# Compte et accès:
+# Compte et accès
 
-## Administrateur:
+## Administrateur
 ###### Email: aurelien@symfony.com
 ###### Mot de passe: aurelien@symfony.com
 
-## Editeur:
+## Editeur
 ###### Email: editeur@symfony.com
 ###### Mot de passe: editeur@symfony.com
 
-## Utilisateur:
+## Utilisateur
 ###### Email: test3@symfony.com
 ###### Mot de passe: test3@symfony.com
 
-# Commentaires:
+# Commentaires
   * Controller --> OK
   * CRUD --> OK
   * timestampable --> OK
@@ -32,7 +32,7 @@
   * Bootstrap --> OK
   * Poster un commentaire --> OK
 
-# Fonctionnement:
+# Fonctionnement
 
 ###### Seul les editeurs et les administrateur peuvent toucher aux articles (création et modification).
 ###### Les utilisateurs peuvent consulter les articles et poster des commentaires.
