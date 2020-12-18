@@ -59,5 +59,7 @@ Nous avions commencé avec Mysql en local mais Heroku utilise Postgresql.
 Postgresql a "User" comme terme protégé et pas Mysql, nous avons donc renomé "User" en "UserName".
 Pour le slug, Mysql crée l'id de l'objet trop tard pour Gedmo, alors les slug etaient composé uniquement du nom de l'article.
 Nous sommes donc passés sur Postgresql en local.
-Le passage de Postgresql à fait buggé la recherche full-text. Donc dans le code, il y a une extension MatchAgainst qui permet à Mysql de fonctionné un index fulltext sur title et content et il y a l'extension Tsvector qui fait en sorte que Postgresql fonctionne.
+Le passage de Postgresql à fait buggé la recherche full-text. Donc dans le code, il y a une extension MatchAgainst qui permet à Mysql de fonctionné un index fulltext sur title et content et il y a l'extension Tsvector (https://packagist.org/packages/vertigolabs/doctrine-full-text-postgres) qui fait en sorte que Postgresql fonctionne.
+
+La recherche se fait dans "ArticleRepository", la fonction s'appel search.
 
