@@ -48,5 +48,16 @@ Si l'url rentrée  n'est pas bonne ou que l'utilisateur ne dispose pas des droit
 
 Pour créer un administrateur ou un editeur il faut d'abbord créer un compte normal puis avec un compte d'admin (aurelien@symfony.com), vous pouvez modifier les droits des utilisateurs dans l'onglet "Utilisateurs".
 
+Nous n'avons pas mis la possibilitée de créer des catégories à la volée.
+Les utilisateurs peuvent modifier leurs informations personnels.
 La recherche fonctionne par catégorie et avec le full text.
+
+# MYSQL VS POSTGRESQL
+
+Beaucoup de problème de base de donnée sont survenu.
+Nous avions commencé avec Mysql en local mais Heroku utilise Postgresql.
+Postgresql a "User" comme terme protégé et pas Mysql, nous avons donc renomé "User" en "UserName".
+Pour le slug, Mysql crée l'id de l'objet trop tard pour Gedmo, alors les slug etaient composé uniquement du nom de l'article.
+Nous sommes donc passés sur Postgresql en local.
+Le passage de Postgresql à fait buggé la recherche full-text. Donc dans le code, il y a une extension MatchAgainst qui permet à Mysql de fonctionné un index fulltext sur title et content et il y a l'extension Tsvector qui fait en sorte que Postgresql fonctionne.
 
