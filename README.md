@@ -3,7 +3,7 @@ PORTAL Pierre
 TROUCHE Aurélien
 Site -> http://portal-trouche-blog.herokuapp.com/
 
-# – Compte et accès (pour la partie administrateur):
+# Compte et accès (pour la partie administrateur):
 
 ## Administrateur:
 Email: aurelien@symfony.com
@@ -17,18 +17,18 @@ Mot de passe: editeur@symfony.com
 Email: test3@symfony.com
 Mot de passe: test3@symfony.com
 
-# – Commentaires:
-  * Item Controller --> OK
-  CRUD --> OK
-  timestampable --> OK
-  sluggable --> OK
-  API --> OK
-  API 5 DERNIER ARTICLES POST --> OK
-  API 5 DERNIERE ARTICLES GET --> OK
-  HERBERGEMENT --> OK
-  Securité --> OK
-  Roles --> OK
-  Bootstrap --> OK
+# Commentaires:
+  * Controller --> OK
+  * CRUD --> OK
+  * timestampable --> OK
+  * sluggable --> OK
+  * API --> OK
+  * API 5 DERNIER ARTICLES POST --> OK
+  * API 5 DERNIERE ARTICLES GET --> OK
+  * HERBERGEMENT --> OK
+  * Securité --> OK
+  * Roles --> OK
+  * Bootstrap --> OK
 
 # Fonctionnement:
 
