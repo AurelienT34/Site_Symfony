@@ -1,7 +1,8 @@
 # Symfony
-PORTAL Pierre
-TROUCHE Aurélien
-Site -> http://portal-trouche-blog.herokuapp.com/
+
+###### PORTAL Pierre
+###### TROUCHE Aurélien
+###### http://portal-trouche-blog.herokuapp.com/
 
 # Compte et accès (pour la partie administrateur):
 
