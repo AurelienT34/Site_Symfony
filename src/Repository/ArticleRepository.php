@@ -24,8 +24,8 @@ class ArticleRepository extends ServiceEntityRepository
 
         if($mots != null) {
             //https://packagist.org/packages/vertigolabs/doctrine-full-text-postgres
-            $query->where('MATCH_AGAINST(a.title,a.content) AGAINST (:mots boolean)>0')
-                ->setParameter('mots','*'.$mots.'*');
+            $query->where('tsquery(a.title,:searchQuery) = true OR tsquery(a.content,:searchQuery) = true')
+                ->setParameter('searchQuery',$mots);
         }
         if($categorie != null) {
             $query->leftJoin('a.category', 'c');

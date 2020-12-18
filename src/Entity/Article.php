@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use VertigoLabs\DoctrineFullTextPostgres\ORM\Mapping\TsVector;
 /**
  * @ApiResource
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -30,10 +31,22 @@ class Article
     private $title;
 
     /**
+     * @var TsVector
+     * @TsVector(name="title_fts", fields={"title"})
+     */
+    private $titleFTS;
+
+    /**
      * @ORM\Column(type="text")
      * @Assert\Length(min=250,minMessage="Contenu trop court [250 caractères minimun]")
      */
     private $content;
+
+    /**
+     * @var TsVector
+     * @TsVector(name="body_fts", fields={"content"})
+     */
+    private $contentFTS;
 
     /**
      * @ORM\Column(type="string", length=255)

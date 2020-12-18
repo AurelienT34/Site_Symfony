@@ -71,6 +71,13 @@ class Comment
         return $this;
     }
 
+    public function setCreatedAt(\DateTimeInterface $createAt): self
+    { // Pour fixtures
+        $this->createdAt = $createAt;
+
+        return $this;
+    }
+
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
