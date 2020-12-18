@@ -29,6 +29,7 @@ Mot de passe: test3@symfony.com
   * Securité --> OK
   * Roles --> OK
   * Bootstrap --> OK
+  * Poster un commentaire --> OK
 
 # Fonctionnement:
 
