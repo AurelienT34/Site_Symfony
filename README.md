@@ -1,6 +1,6 @@
 # Symfony
 
-###### PORTAL Pierre
+###### PORTAL Pierre 21502405
 ###### TROUCHE Aurélien 21502994
 ###### http://portal-trouche-blog.herokuapp.com/
 
