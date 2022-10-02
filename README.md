@@ -55,7 +55,7 @@
 
 # MYSQL VS POSTGRESQL
 
-###### Beaucoup de problème de base de donnée sont survenu.
+###### Beaucoup de problème de base de donnée sont survenus.
 ###### Nous avions commencé avec Mysql en local mais Heroku utilise Postgresql.
 ###### Postgresql a "User" comme terme protégé et pas Mysql, nous avons donc renomé "User" en "UserName".
 ###### Pour le slug, Mysql crée l'id de l'objet trop tard pour Gedmo, alors les slug etaient composé uniquement du nom de l'article.
