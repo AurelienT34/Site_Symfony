@@ -63,5 +63,5 @@
 ###### Le passage de Postgresql à fait buggé la recherche full-text. 
 ###### Donc dans le code, il y a une extension MatchAgainst qui permet à Mysql de fonctionné avec deux index fulltext (title&content) et il y a l'extension Tsvector (https://packagist.org/packages/vertigolabs/doctrine-full-text-postgres) qui fait en sorte que Postgresql fonctionne.
 
-###### La recherche se fait dans "ArticleRepository", la fonction s'appel search.
+###### La recherche se fait dans "ArticleRepository", la fonction s'appelle search.
 
