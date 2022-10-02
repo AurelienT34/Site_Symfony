@@ -4,7 +4,7 @@
 ###### TROUCHE Aurélien 21502994
 ###### http://portal-trouche-blog.herokuapp.com/
 
-# Compte et accès
+# Comptes et accès
 
 ## Administrateur
 ###### Email: aurelien@symfony.com
